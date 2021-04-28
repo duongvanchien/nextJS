@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.container_fluid {
+  width: 50%;
+  margin: auto auto;
+}

@@ -1,11 +1,14 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import Link from "next/link";
+import { Button } from "antd";
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -15,9 +18,18 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
         </p>
+
+        <Link href="/login">
+          <Button
+            type="primary"
+            style={{ background: "green", borderColor: "yellow" }}
+          >
+            Đăng nhập
+          </Button>
+        </Link>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
@@ -56,10 +68,10 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
     </div>
-  )
+  );
 }
