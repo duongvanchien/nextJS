@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Login.module.css";
 import { Form, Input, Button, Checkbox } from "antd";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 const layout = {
   labelCol: { span: 8 },
@@ -13,8 +14,11 @@ const tailLayout = {
 
 export default () => {
   const router = useRouter();
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+
   const onFinish = (values) => {
-    console.log("Success:", values);
+    console.log("Success:", name);
     router.push("/home");
   };
 
@@ -29,6 +33,7 @@ export default () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.container_fluid}>
+        <h2 style={{ textAlign: "center" }}>Đăng nhập</h2>
         <Form
           {...layout}
           name="basic"
@@ -41,7 +46,7 @@ export default () => {
             name="username"
             rules={[{ required: true, message: "Please input your username!" }]}
           >
-            <Input />
+            <Input onChange={(e) => setName(e.target.value)} />
           </Form.Item>
 
           <Form.Item
@@ -49,7 +54,7 @@ export default () => {
             name="password"
             rules={[{ required: true, message: "Please input your password!" }]}
           >
-            <Input.Password />
+            <Input.Password onChange={(e) => setPassword(e.target.value)} />
           </Form.Item>
 
           <Form.Item {...tailLayout} name="remember" valuePropName="checked">
