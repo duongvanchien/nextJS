@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, combineReducers } from "redux";
 import { HYDRATE, createWrapper } from "next-redux-wrapper";
 import thunkMiddleware from "redux-thunk";
 import count from "./count/reducer";
+import user from "./user/reducer";
 
 const bindMiddleware = (middleware) => {
   if (process.env.NODE_ENV !== "production") {
@@ -13,6 +14,7 @@ const bindMiddleware = (middleware) => {
 
 const combinedReducer = combineReducers({
   count,
+  user,
 });
 
 const reducer = (state, action) => {

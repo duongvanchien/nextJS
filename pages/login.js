@@ -3,6 +3,9 @@ import styles from "../styles/Login.module.css";
 import { Form, Input, Button, Checkbox } from "antd";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { submitUsername } from "../store/user/action";
 
 const layout = {
   labelCol: { span: 8 },
@@ -12,13 +15,14 @@ const tailLayout = {
   wrapperCol: { offset: 8, span: 16 },
 };
 
-export default () => {
+const Login = (props) => {
   const router = useRouter();
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
   const onFinish = (values) => {
     console.log("Success:", name);
+    props.submitUsername(name);
     router.push("/home");
   };
 
@@ -71,3 +75,11 @@ export default () => {
     </div>
   );
 };
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    submitUsername: bindActionCreators(submitUsername, dispatch),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Login);

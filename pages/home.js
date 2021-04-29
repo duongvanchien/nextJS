@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
 import axios from "axios";
-import { Row, Col, Card } from "antd";
+import { Row, Col, Card, Button } from "antd";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { addCount } from "../store/count/action";
+import { submitUsername } from "../store/user/action";
 
 const { Meta } = Card;
 
@@ -18,7 +18,7 @@ const Home = (props) => {
       </Head>
       <div>
         <h1>Đăng nhập thành công</h1>
-        <h1>{props.count}</h1>
+        <h3>{props.user.name}</h3>
         <Link href="/login">
           <a>Đăng xuất</a>
         </Link>
@@ -75,12 +75,12 @@ Home.getInitialProps = async () => {
 };
 
 const mapStateToProps = (state) => ({
-  count: state.count.count,
+  user: state.user,
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addCount: bindActionCreators(addCount, dispatch),
+    submitUsername: bindActionCreators(submitUsername, dispatch),
   };
 };
 
