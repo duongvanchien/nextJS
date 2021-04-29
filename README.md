@@ -39,5 +39,5 @@ Tham khảo tại [https://github.com/vercel/next.js/tree/canary/examples/with-r
 
 # Tạo Branch mới
 
-git checkout -b your_branch
-git push -u origin your_branch
+- git checkout -b your_branch
+- git push -u origin your_branch
