@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import axios from "axios";
-import { Row, Col, Card, Button } from "antd";
+import { Row, Col, Card } from "antd";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { submitUsername } from "../store/user/action";
@@ -40,12 +40,7 @@ const Home = (props) => {
                 <Card
                   hoverable
                   style={{ width: 240, marginTop: 20 }}
-                  cover={
-                    <img
-                      alt="example"
-                      src="https://assets-global.website-files.com/6005fac27a49a9cd477afb63/60576840e7d265198541a372_bavassano_homepage_gp.jpg"
-                    />
-                  }
+                  cover={<img alt="example" src={value?.image} />}
                 >
                   <Meta title={value.title} description={value.body} />
                 </Card>
@@ -61,9 +56,10 @@ const Home = (props) => {
 Home.getInitialProps = async () => {
   let items = [];
   await axios
-    .get("https://jsonplaceholder.typicode.com/posts")
+    .get("http://localhost:3000/api/items")
     .then(function (response) {
-      items = response.data;
+      console.log(response)
+      items = response.data.data;
     })
     .catch(function (error) {
       alert(error);
