@@ -2,6 +2,9 @@ import Head from "next/head";
 import Link from "next/link";
 import axios from "axios";
 import { Row, Col, Card } from "antd";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { addCount } from "../store/count/action";
 
 const { Meta } = Card;
 
@@ -15,6 +18,7 @@ const Home = (props) => {
       </Head>
       <div>
         <h1>Đăng nhập thành công</h1>
+        <h1>{props.count}</h1>
         <Link href="/login">
           <a>Đăng xuất</a>
         </Link>
@@ -70,4 +74,14 @@ Home.getInitialProps = async () => {
   };
 };
 
-export default Home;
+const mapStateToProps = (state) => ({
+  count: state.count.count,
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addCount: bindActionCreators(addCount, dispatch),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
