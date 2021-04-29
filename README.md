@@ -41,3 +41,9 @@ Tham khảo tại [https://github.com/vercel/next.js/tree/canary/examples/with-r
 
 - git checkout -b your_branch
 - git push -u origin your_branch
+
+# Why do I not see network tab requests in the browser when using NextJS SSR?
+
+getInitialProps is used to asynchronously fetch some data, which then populates props.
+
+For the initial page load, getInitialProps will run on the server only. getInitialProps will then run on the client when navigating to a different route via the next/link component or by using next/router. However, if getInitialProps is used in a custom _app.js, and the page being navigated to implements getServerSideProps, then getInitialProps will run on the server.
