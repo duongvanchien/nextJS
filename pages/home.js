@@ -20,7 +20,7 @@ const Home = (props) => {
         <h1>Đăng nhập thành công</h1>
         <h3>{props.user.name}</h3>
         <Link href="/login">
-          <a>Đăng xuất</a>
+          <a>Log Out</a>
         </Link>
         <Row style={{ marginTop: 5 }}>
           {props.items?.map((value, key) => (
