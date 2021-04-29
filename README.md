@@ -36,3 +36,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 # Redux NextJS
 
 Tham khảo tại [https://github.com/vercel/next.js/tree/canary/examples/with-redux-wrapper](https://github.com/vercel/next.js/tree/canary/examples/with-redux-wrapper)
+
+# Tạo Branch mới
+
+git checkout -b your_branch
+git push -u origin your_branch
