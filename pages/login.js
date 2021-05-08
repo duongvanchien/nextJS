@@ -61,9 +61,9 @@ const Login = (props) => {
 						<Input.Password onChange={(e) => setPassword(e.target.value)} />
 					</Form.Item>
 
-					<Form.Item {...tailLayout} name="remember" valuePropName="checked">
-						<Checkbox>Ghi nhớ mật khẩu</Checkbox>
-					</Form.Item>
+          <Form.Item {...tailLayout} name="remember" valuePropName="checked">
+            <Checkbox>Ghi nhớ</Checkbox>
+          </Form.Item>
 
 					<Form.Item {...tailLayout}>
 						<Button type="primary" htmlType="submit">
