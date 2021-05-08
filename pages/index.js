@@ -27,7 +27,7 @@ export default function Home() {
             type="primary"
             style={{ background: "green", borderColor: "yellow" }}
           >
-            Đăng nhập vào hệ thống
+            Đăng nhập vào hệ thống NextJS Demo
           </Button>
         </Link>
 
