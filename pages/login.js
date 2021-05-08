@@ -62,7 +62,7 @@ const Login = (props) => {
           </Form.Item>
 
           <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-            <Checkbox>Nhớ mật khẩu</Checkbox>
+            <Checkbox>Ghi nhớ mật khẩu</Checkbox>
           </Form.Item>
 
           <Form.Item {...tailLayout}>
