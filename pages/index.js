@@ -27,7 +27,7 @@ export default function Home() {
             type="primary"
             style={{ background: "green", borderColor: "yellow" }}
           >
-            Đăng nhập
+            Đăng nhập vào hệ thống
           </Button>
         </Link>
 
@@ -68,7 +68,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
+          Powered by Dương Văn Chiến
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
