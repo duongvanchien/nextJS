@@ -18,6 +18,7 @@ const Home = (props) => {
       </Head>
       <div>
         <h1>Đăng nhập thành công</h1>
+        <h1>Hello</h1>
         <h3>{props.user.name}</h3>
         <Link href="/login">
           <a>Log Out</a>
