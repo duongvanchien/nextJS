@@ -27,7 +27,7 @@ export default function Home() {
             type="primary"
             style={{ background: "green", borderColor: "yellow" }}
           >
-            Đăng nhập vào hệ thống
+            Đăng nhập vào hệ thống Demo
           </Button>
         </Link>
 
@@ -46,7 +46,7 @@ export default function Home() {
             href="https://github.com/vercel/next.js/tree/master/examples"
             className={styles.card}
           >
-            <h3>Examples &rarr;</h3>
+            <h3>Ví dụ &rarr;</h3>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
 
